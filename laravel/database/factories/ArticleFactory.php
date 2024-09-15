@@ -23,14 +23,13 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker-> title(),
-            'short_description' =>$this->faker->title(),
+            'title' => $this->faker-> name(),
+            'short_description' =>$this->faker->realText(),
             'content'=> $this->faker->realText(),
             // 'author_id'=>$this->faker->numberBetween(0,5),
             // 'image_id'=>$this->faker->numberBetween(0,5),
             // 'category_id'=>$this->faker->numberBetween(0,5),
             'author_id'=>$this->faker->numberBetween(1,5),
-            'image_id'=>$this->faker->numberBetween(1,5),
             'category_id'=>$this->faker->numberBetween(1,5),
             'modified_at'=>$this->faker->date(),
             'seo_title'=>$this->faker->title(),

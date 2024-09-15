@@ -16,7 +16,11 @@ class Category extends Model
         'name'
     ];
 
+    /**
+     * Get the category associated to article.
+     */
+
     public function article() {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Article::class, 'category_id', 'id');
     }
 }

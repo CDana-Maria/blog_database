@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark  navbar-custom">
       <div class="container ">
         <a class="navbar-brand" href="#">
-          <img src="images/logo_1.png" class="logo" alt="logo">
+          <img src="../images/logo_1.png" class="logo" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
                   <a class="dropdown-item" href="#popular">Popular</a>
                   <a class="dropdown-item" href="#recent">Recent</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="pages/products_all.html">All products</a>
+                  <a class="dropdown-item" href="{!! url('/services/all'); !!}">All products</a>
                 </div>
               </li>
               <li class="nav-item effect">
@@ -35,6 +35,7 @@
               <li class="nav-item effect">
                 <a class="nav-link" href="#sponsors">Sponsors</a>
               </li>
+              <Cart></Cart>
               <li class="nav-item effect">
                 <a class="nav-link" href="https://www.facebook.com" id="line" target="_blank">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-facebook"
@@ -62,9 +63,27 @@
                   </svg>
                 </a>
               </li>
+
+              <li class="nav-item effect">
+                 <div>
+            @if (Route::has('login'))
+                <div class="hidden">
+                    @auth
+                        <a href="{{ url('/') }}" class="nav-link ">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" class="nav-link ">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="nav-link ">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+              </li>
             </ul>
           </div>
         </div>
       </div>
+     
     </nav>
   </header>

@@ -18,11 +18,19 @@ class Comment extends Model
         'article_id'
     ];
 
+
+    /**
+     * The comments that belong to the articles.
+     */
     public function article() {
-        return $this->belongsTo(Article::class);
+        return $this->belongsTo(Article::class, 'article_id');
     }
 
+
+    /**
+     * The comments that belong to the user.
+     */
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -43,11 +43,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+/**
+     * Assign user to article.
+     */
     public function article() {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Article::class, 'author_id', 'id');
     }
 
+    /**
+     * Assign user to comments.
+     */
     public function comment() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'user_id', 'id');
     }
 }

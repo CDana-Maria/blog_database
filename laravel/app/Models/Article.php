@@ -19,23 +19,39 @@ class Article extends Model
         'image_id'
     ];
 
+    /**
+     * The articles that belong to the user.
+     */
+
     public function author() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'author_id');
     }
-
+/**
+     * The article that belongs to the image.
+     */
     public function image() {
-        return $this->hasOne(Image::class);
+        return $this->belongsTo(Image::class, 'article_id');
     }
 
+/**
+     * The articles that belong to the tags.
+     */
     public function tag() {
         return $this->belongsToMany(Tag::class);
     }
 
+    /**
+     * The articles that belong to the category.
+     */
     public function category() {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
+    /**
+     * Assigning articles to comments.
+     */
+
     public function comment() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'article_id', 'id');
     }
 }

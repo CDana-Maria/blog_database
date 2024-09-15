@@ -2,27 +2,28 @@
     <div class="container border-bottom">
       <div class="row align-items-center">
         <div class="col">
-          <a href="#">          
-            <img src="images/logo_1.png" class="logo_f" alt="logo">
+          <a href="{!! url('/'); !!}">          
+            <!-- <img src="../../images/logo_1.png" class="logo_f" alt="logo"> -->
+            <img src="../images/logo_1.png" class="logo" alt="logo">
           </a>
         </div>
         <div class="col">
           <h2 class="text-white">Menu</h2>
           <ul class="navbar-nav mr-auto ">
             <li class="nav-item effect">
-              <a class="nav-link  text-white" href="pages/blog.html">Blog</a>
+              <a class="nav-link  text-white" href='/articles'>Blog</a>
             </li>
             <li class="nav-item effect">
-              <a class="nav-link text-white" href="pages/products_all.html">Products</a>
+              <a class="nav-link text-white" href="{!! url('/services/all'); !!}">Products</a>
             </li>
             <li class="nav-item effect">
-              <a class="nav-link text-white" href="pages/about_us.html">About</a>
+              <a class="nav-link text-white" href="{!! url('/about'); !!}">About</a>
             </li>
             <li class="nav-item effect">
-              <a class="nav-link text-white" href="pages/contact.html">Contact</a>
+              <a class="nav-link text-white" href="{!! url('/contact'); !!}">Contact</a>
             </li>
             <li class="nav-item effect">
-              <a class="nav-link text-white" href="pages/terms.html">Terms and Conditions</a>
+              <a class="nav-link text-white" href="{!! url('/terms'); !!}">Terms and Conditions</a>
             </li>
           </ul>
         </div>
@@ -60,3 +61,4 @@
       </div>
     </div>
   </footer>
+  

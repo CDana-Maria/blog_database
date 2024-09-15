@@ -26,7 +26,8 @@ class ImageFactory extends Factory
         return [
 		    'name' => $this->faker->name(),
             'size' => Str::length(6),
-            'path' => 'article.jpg'
+            'path' => '../images/prod_9.webp',
+            'article_id'=>$this->faker->numberBetween(1,10)
         ];
     }
 }

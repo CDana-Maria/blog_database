@@ -17,7 +17,10 @@ class Image extends Model
         'size'
     ];
 
+    /**
+     * Assigning Image to article.
+     */
     public function article() {
-        return $this->belongsTo(Article::class);
+        return $this->hasOne(Article::class, 'article_id');
     }
 }
